@@ -37,9 +37,9 @@ public class App {
                     int noteNumberSelected = inputMain.nextInt();
                     inputMain.nextLine();
 
-                    Note specificNoteSelected = mainNotesList.getNote(noteNumberSelected-1);
+                    Note specificNoteSelected = mainNotesList.getNote(noteNumberSelected - 1);
 
-                    System.out.println("You have selected number " + noteNumberSelected + " Which is note titled " + specificNoteSelected.getTitle());
+                    System.out.println("You have selected note number " + noteNumberSelected + " Which is note titled " + specificNoteSelected.getTitle());
 
                     System.out.println("\n************************");
                     System.out.println("Press the corresponding number for what action you want to perform:");
@@ -53,11 +53,27 @@ public class App {
                     inputMain.nextLine();
 
                     if (specificNoteChoice == 1) {
-                        System.out.println("\nNow showing your selected note");
+                        System.out.println("\nNow showing note number " + noteNumberSelected);
                         System.out.println("\n" + specificNoteSelected.getTitle());
                         System.out.println("\n" + specificNoteSelected.getText());
                     }
 
+                    else if (specificNoteChoice == 2) {
+                        System.out.println("\nNow deleting note number " + noteNumberSelected);
+                        mainNotesList.removeNote(noteNumberSelected - 1);
+                    }
+
+                    else if (specificNoteChoice == 3) {
+                        System.out.println("\nNow updating note number " + noteNumberSelected);
+                        System.out.println("Write your new title: ");
+                        String newTitle = inputMain.nextLine();
+                        System.out.println("Write your new text: ");
+                        String newText = inputMain.nextLine();
+
+                        specificNoteSelected.setTitle(newTitle);
+                        specificNoteSelected.setText(newText);
+                    }
+                    
                 }
             }
 

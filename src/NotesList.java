@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NotesList {
+    
     private List<Note> notes = new ArrayList<>();
 
     public void addNote(Note note) {

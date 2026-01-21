@@ -1,8 +1,8 @@
 public class Note {
 
-    int noteId;
-    String title;
-    String text;
+    private int noteId;
+    private String title;
+    private String text;
 
     //Constructor
     Note(int noteId, String title, String text) {
